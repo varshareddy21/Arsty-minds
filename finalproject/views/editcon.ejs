@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+   <% include partials/header.ejs %>
+   <% include partials/navigation.ejs %>
+<div class="main">
+<div class="container">
+    <main id="form">
+        <div class="form-container">
+            <h1 id="title">Want to edit an existing connection?</h1>
+            <p id="description">please provide us the following details!</p>
+            <br>
+            <form  id = "survey-form" action = "/connections/connection/<%= connection._id %>?_method=PUT" method = "post">
+                <div class="row">
+                    <div class="column1">
+                        <label for="connectionName">Connection Name:</label>
+                    </div>
+                    <div class="column2"><input type="text" id="connectionName" name = "connectionName" placeholder = "Connection Name" value ="<%= connection.connectionName%>" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="currentposition">connectionTopic:</label>
+                    </div>
+                    <div class = "column2">
+                        <select name="connectionType" id="currentposition" required>
+                            <option value="art" >ART</option>
+                            <option value="craft" >CRAFT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="date">Date:</label>
+                    </div>
+                    <div class="column2"><input type="date" id="date" name = "date" value ="<%= connection.Date%>" required></div>
+                </div>
+                <div class="row">
+                  <div class="column1">
+                    <label for="time">time:</label>
+                  </div>
+                  <div class="column2"><input type="time" id="time" name = "Time" value="<%= connection.Time%>" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="location">Where?:</label>
+                    </div>
+                    <div class="column2"><input type="text" id="location" name = "location" placeholder = "enter location" value ="<%= connection.location%>" required></div>
+                </div>
+                <div class = "row">
+                    <div class = "column1">
+                        <label for="desc"> Description:</label>
+                    </div>
+                    <div class = "column2">
+                        <textarea name="details" id="desc" cols="30" rows="10" placeholder = "Enter your text here" > <%= connection.Details%> </textarea>
+                    </div>
+                </div>
+                <button type="submit" id="submit">create connection</button>
+            </form>
+        </div>
+    </main>
+</div>
+</div>
+<% include partials/footer %>
+</body>
+</html>

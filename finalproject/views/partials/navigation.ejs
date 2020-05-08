@@ -1,0 +1,14 @@
+<div class="navbar">
+ <%if(user){%>
+          <a href="/signout">Logout</a>
+          <a href="/savedConnections">My Connections</a>
+          <a href="/connections/newConnection"> Start a new Connection</a>
+          <a href="/connections">Connections</a>
+          <div class="username">Welcome <%= user.firstName%></div>
+  <%}else{%>
+          <a href="/register">Sign Up</a>
+          <a href="/signin">Login</a>
+          <a href="/newConnection"> Start a new Connection</a>
+          <a href="/connections">Connections</a>
+  <%}%>
+</div>

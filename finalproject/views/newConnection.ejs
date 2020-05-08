@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+  <title>New Connection</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="The Title">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+   <% include partials/header.ejs %>
+   <% include partials/navigation.ejs %>
+   <div class="main">
+   <form id= "connection-form" action = "/connections/newconnection" method = "post">
+    <% if(error){%>
+            <%error.forEach(function(item){%>
+                <p><%=item.msg %></p>
+                <%});} %>
+  <div class="row">
+     <div class="column1">
+      <label for = "connectionName">Connection Name:</label>
+    </div>
+    <div class="column2">
+      <input type="text" id="connectionName" name = "connectionName" placeholder = "Connection Name" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column1">
+      <label for="currentposition">connectionTopic:</label>
+    </div>
+    <div class = "column2">
+      <select  size="2" name="connectionTopic" id="currentposition" required>
+        <option value="">Choose</option>
+        <option value="art">ART</option>
+        <option value="craft">CRAFT</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column1">
+      <label for="date">Date:</label>
+    </div>
+    <div class="column2"><input type="date" id="date" name = "date" required></div>
+  </div>
+  <div class="row">
+    <div class="column1">
+      <label for="time">time:</label>
+    </div>
+    <div class="column2"><input type="time" id="time" name = "Time" required></div>
+  </div>
+  <div class="row">
+    <div class="column1">
+      <label for="location">Where?:</label>
+    </div>
+    <div class="column2"><input type="text" id="location" name = "location" placeholder = "enter location" required></div>
+  </div>
+  <div class = "row">
+    <div class = "column1">
+      <label for="desc"> Description:</label>
+    </div>
+    <div class = "column2">
+      <textarea name="details" id="desc" cols="30" rows="10" placeholder = "Enter your text here"></textarea>
+    </div>
+</div>
+<button type="submit" id="submit">create connection</button>
+   </form>
+ </div>
+   <% include partials/footer.ejs %>
+ </body>
+ </html>

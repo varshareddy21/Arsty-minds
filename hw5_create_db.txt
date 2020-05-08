@@ -1,0 +1,119 @@
+use Events;
+
+db.connection.drop();
+db.users.drop();
+db.userconnections.drop();
+
+
+db.createCollection("connections");
+
+db.createCollection("userconnections");
+
+db.createCollection("users");
+
+
+
+
+
+db.connections.insertMany([{
+        "username":"vsripath@gmail.com",
+        "connectionName":"Painting",
+        "connectionTopic":"art",
+        "Details":"Paint potraits of your pets.",
+        "Date":"10/14/2019",
+        "Time":"5:30pm",
+        "imageUrl":"/images/host.jpg",
+        "location": "barton creek drive"
+    },{
+        "username":"vsripath@gmail.com",
+        "connectionName":"Figure Drawing",
+        "connectionTopic":"art",
+        "Details":"This is a group for artists interested in drawing/painting the dancers as they dance/rehearse their dance routine.",
+        "Date":"10/11/2019",
+        "Time":"12:30 pm",
+        "imageUrl":"/images/host1.jpg",
+        "location": "mallard creek road"
+    },{
+        "username":"kila123@gmail.com",
+        "connectionName":"Dancing",
+        "connectionTopic":"art",
+        "Details":"This is group is for anyone interested in learning salsa dance! This class progresses from beginner steps to intermediate progressions.",
+        "Date":"10/17/2019",
+        "Time":"4:30pm",
+        "imageUrl":"/images/host2.jpg",
+        "location": "avebury drive"
+    },{
+        "username":"avelaga@gmail.com",
+        "connectionName":"Origami",
+        "connectionTopic":"craft",
+        "Details":"Come see the creations of over 20 artists who use mathematical inventions and interpretations to create compelling works of art.",
+        "Date":"10/14/2019",
+        "Time":"5:00pm",
+        "imageUrl":"/images/host3.jpg",
+        "location": "university terrace drive"
+    },{
+        "username":"avelaga@gmail.com",
+        "connectionName":"Quilling",
+        "connectionTopic":"craft",
+        "Details":"LEARN this fun and addicting ART form to create this unique bouquet of flowers",
+        "Date":"10/12/2019",
+        "Time":"6:00pm",
+        "imageUrl":"/images/host4.jpg",
+        "location": "buffalo grove road"
+    },{
+        "username":"kila123@gmail.com",
+        "connectionName":"Knitting",
+        "connectionTopic":"craft",
+        "Details":"Come join us in this class for beginners and learn to knit, purl, cast on, cast off!",
+        "Date":"10/13/2019",
+        "Time":"4:00pm",
+        "imageUrl":"/images/host5.jpg",
+        "location": "van landingham road"
+    }]);
+
+
+
+
+
+
+
+
+
+
+
+
+db.userconnections.insertMany([
+{"username":"vsripath@gmail.com",
+"userConnectionList":[{"_id":"5dd8c479f7947d3b54628b38",
+"connectionId":"C6",
+"connectionName":"Knitting",
+"connectionTopic":"craft",
+"rsvp":"No"},
+{"_id":"5dd8c4c8f7947d3b54628b3c",
+"connectionId":"C1",
+"connectionName":"Painting",
+"connectionTopic":"art",
+"rsvp":"Maybe"}]
+},
+{"user_Id":"avelaga@gmail.com",
+"userConnectionList":[{"_id":"5dd8c384f7947d3b54628b2e",
+"connectionId":"C2",
+"connectionName":"Figure Drawing",
+"connectionTopic":"art",
+"rsvp":"No"},
+{"_id":"5dd8c393f7947d3b54628b2f",
+"connectionId":"C5",
+"connectionName":"Quilling",
+"connectionTopic":"craft",
+"rsvp":"Yes"}]
+}
+
+
+
+
+db.users.insert({ "_id" : ObjectId("5df183fd06e2c923106bd179"),
+"username" : "kila123@gmail.com",
+"firstName" : "akhila",
+"lastName" : "velaga",
+ "salt" : "ef52acd2506737ceccd88e8f4a0d1749e9ccc4253a14c169253dcc3b105bb518",
+ "hash" : "0e33147a865248cc19871c5806441bf524fe15e11cfdc50581c363adc4bd64be83f79bf926b357a3056effcd6fcf4c9aaba4bdcfc4a0e1119025a7c1cd4c6405693f97f12246fe63c02120d2ee0167e40792e46329ef11bff0fbb3d0be78a88575a8cb58dfedabdd1d6e365bab338d006f0ff09ec5cfc4ade2a8438996987ad3a3cb3db709ba6f4f8c7d65d1ccd64a95fcb994dadaa8123b0f2eb08759ba4e469f0632ee60064b94328b03062a50be6af54490d4580b3d69cf63c573e326aad8d0e8ef0e32cd7f46b4801c27fc7dc368bce800823c20599aeb568431974ef71a2883b56f61f3ece7ec71a528387fc1384d81d560917d8415e6a5cf2ee65ad1e86d701a20a6946148e57ee2ba82b649d39f817a7e0b0f8f018544e0cdbb8a29bd477f2842aa57ced1672ab6bcf83390734fd5797e2326fde5ed7179ae43c7243c51ffd07f36be47da8ca9354af89af83da321f698c5bc6e478a2e24d106a22e6e3652f1ce7c3135768dba9d80b86a0c2d04730b3a0f5d81a6e65414461fa226715fabf8dff5bea3d00bb8dc83d6f945779f012765997887357242ea180c12d4fd1e24db10d962a9707f25fef474434ab45a06c6f890b5b9dba91b4465c146ff7a553516ee57377be2369ad86328d774e7d4d4a754fd87caf3923ed6a532d9c5ffafaccb699c2e4a43fbaa52936ebfdd8b389ee1adc80c0f061ed9e5b325b48194", "__v" : 0 })

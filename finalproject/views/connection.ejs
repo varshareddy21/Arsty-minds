@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+  <title>connection</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+   <% include partials/header.ejs %>
+   <% include partials/navigation.ejs %>
+  <div class="main">
+    <p><%= data.connectionName %></p>
+    <div class="conn_img">
+      <img src="<%= data.imageUrl %>" alt="host" />
+    </div>
+    <p>Date: <%= data.Date %></p>
+    <p>Time: <%= data.Time %></p>
+    <p>Location: <%= data.location %></p>
+    <p>hostname: <%= data.hostname %></p>
+	<p> Are you going?</p>
+  <%if(userprofile){%>
+      <a class="button1" href= "/connections/connection/<%=data.connectionId%>/save/Yes" >Yes</a>
+      <a class="button1" href= "/connections/connection/<%=data.connectionId%>/save/No" >No</a>
+      <a class="button1" href= "/connections/connection/<%=data.connectionId%>/save/Maybe" >Maybe</a>
+      <input type="hidden" name ="action" value= "save">
+    <%}else{%>
+      <a href="#" class = "button">Yes</a>
+      <a href="#" class = "button">No</a>
+      <a href="#" class = "button">Maybe</a>
+    <%}%>
+
+       <h3>Details:</h3>
+       <p><%= data.Details %></p>
+      <%if(user && (data.username === user.username)){%>
+      <form style = "display:inline;"  action="/connections/connection/<%=data.connectionId %>?_method=DELETE" method="POST">
+          <button type="submit" class="button">Delete</button>
+      </form>
+      <a href="/connections/connection/<%=data.connectionId%>/edit" class = "button">Edit</a>
+      <%}%>
+  </div>
+  <% include partials/footer.ejs %>
+ </body>
+</html>

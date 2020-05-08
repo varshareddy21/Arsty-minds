@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+  <title>Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+   <% include partials/header.ejs %>
+   <% include partials/navigation.ejs %>
+  <div class="main">
+<div class="container">
+
+
+    <main id="form">
+        <div class="form-container">
+            <h1 id="title">Want to create an account?</h1>
+            <p id="description">Fill the following form!</p>
+            <br>
+            <form  id = "survey-form" action = "/register" method = "post">
+                <div class="row">
+                    <div class="column1">
+                        <label for="username">User Name:</label>
+                    </div>
+                    <div class="column2"><input type="email" id="username" name = "username" placeholder = "username" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="column2"><input type="password" id="password" name = "password" placeholder = "password" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="column2"><input type="text" id="firstName" name = "firstName" placeholder = "firstName" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="column2"><input type="text" id="lastName" name = "lastName" placeholder = "lastName" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="address1">Address Lane 1</label>
+                    </div>
+                    <div class="column2"><input type="text" id="address1" name = "address1" placeholder = "address1" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="address2">Address Lane 2</label>
+                    </div>
+                    <div class="column2"><input type="text" id="address2" name = "address2" placeholder = "address2" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="column2"><input type="text" id="city" name = "city" placeholder = "city" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="state">State</label>
+                    </div>
+                    <div class="column2"><input type="text" id="state" name = "state" placeholder = "state" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="zipCode">zipcode</label>
+                    </div>
+                    <div class="column2"><input type="text" id="zipCode" name = "zipCode" placeholder = "zipCode" required></div>
+                </div>
+                <div class="row">
+                    <div class="column1">
+                        <label for="country">country</label>
+                    </div>
+                    <div class="column2"><input type="text" id="country" name = "country" placeholder = "country" required></div>
+                </div>
+                <button type="submit" id="submit">Register</button>
+            </form>
+        </div>
+    </main>
+</div>
+</div>
+<% include partials/footer %>
+</body>
+</html>
